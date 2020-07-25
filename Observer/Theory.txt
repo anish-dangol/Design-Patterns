@@ -1,0 +1,19 @@
+﻿This pattern is a one-to-many dependency between objects so that when one object changes state, 
+all its dependents are notified. This is typically done by calling one of their methods.
+
+
+For the sake of simplicity, think about what happens when you follow someone on Twitter. You are 
+essentially asking Twitter to send you (the observer) tweet updates of the person (the subject) 
+you followed. The pattern consists of two actors, the observer who is interested in the updates 
+and the subject who generates the updates.
+
+
+A subject can have many observers and is a one to many relationship. However, an observer is 
+free to subscribe to updates from other subjects too. You can subscribe to news feed from a 
+Facebook page, which would be the subject and whenever the page has a new post, the subscriber
+would see the new post.
+
+
+Key consideration: In case of many subjects and few observers, if each subject stores its observers 
+separately, it’ll increase the storage costs as some subjects will be storing the same observer multiple 
+times.
